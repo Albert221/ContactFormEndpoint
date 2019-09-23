@@ -9,6 +9,9 @@ parameters:
     recipient_email: '%env(RECIPIENT_EMAIL)%'
     sender_email: '%env(SENDER_EMAIL)%'
 
+    antiflood_interval: 'PT6H'
+    antiflood_quantity: 2
+
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -34,3 +37,5 @@ services:
         arguments:
             $recipientEmail: '%recipient_email%'
             $senderEmail: '%sender_email%'
+            $antifloodInterval: '%antiflood_interval%'
+            $antifloodQuantity: '%antiflood_quantity%'
